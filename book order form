@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+</head>
+<body>
+    <h2>Order Form</h2>
+    <form action="#" method="POST">
+        <label for="customerName">Customer Name:</label><br>
+        <input type="text" id="customerName" name="customerName"><br><br>
+
+        <label>Choose textbooks:</label><br>
+        <input type="checkbox" id="htmlTextbooks" name="textbooks" value="HTML" />
+        <label for="htmlTextbooks">Four HTML textbooks for $1000</label><br>
+
+        <input type="checkbox" id="xmlTextbooks" name="textbooks" value="XML" />
+        <label for="xmlTextbooks">Eight XML textbooks for $2000</label><br>
+
+        <input type="checkbox" id="javaBeansBooks" name="textbooks" value="JavaBeans" />
+        <label for="javaBeansBooks">Four JavaBeans books for $2500</label><br>
+
+        <input type="checkbox" id="umlTextbooks" name="textbooks" value="UML" />
+        <label for="umlTextbooks">Eight UML textbooks for $1500</label><br><br>
+
+        <label>Payment Method:</label><br>
+        <input type="radio" id="cash" name="payment" value="cash" />
+        <label for="cash">Cash</label><br>
+
+        <input type="radio" id="cheque" name="payment" value="cheque" />
+        <label for="cheque">Cheque/DD</label><br>
+
+        <input type="radio" id="creditCard" name="payment" value="creditCard" />
+        <label for="creditCard">Credit Card</label><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
