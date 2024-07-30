@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Input and Output Example</title>
+</head>
+<body>
+<input type="text" id="userInput">
+<button onclick="showOutput()">Submit</button>
+<p id="output"></p>
+<script>
+function showOutput() { document.getElementById('output').innerText = "You entered: " + document.getElementById('userInput').value; }
+</script>
+</body>
+</html>
