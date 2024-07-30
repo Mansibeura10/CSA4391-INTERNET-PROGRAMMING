@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transitions and Transformations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #4CAF50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s ease; /* CSS transition */
+        }
+        .box:hover {
+            background-color: #FF5722; /* Color transformation */
+            width: 150px; /* Size transformation */
+            height: 150px; /* Size transformation */
+            transform: rotate(45deg) translateX(50px); /* Rotate and translate transformation */
+        }
+        .text {
+            color: white;
+            font-size: 16px;
+            transition: font-size 0.5s ease; /* Text size transition */
+        }
+        .box:hover .text {
+            font-size: 20px; /* Text size transformation */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span class="text">Hover me!</span>
+    </div>
+</body>
+</html>
