@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Handling Example</title>
+<style>
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: dodgerblue;
+        margin: 50px;
+        text-align: center;
+        line-height: 100px;
+        color: white;
+    }
+</style>
+</head>
+<body>
+    <div class="box" id="box">Hover over me</div>
+
+    <script>
+        // Function to run when the page is fully loaded
+        window.onload = function() {
+            console.log("Page loaded");
+            // You can perform additional actions here after the page is loaded
+        };
+
+        // Function to run when the mouse enters the box
+        function handleMouseOver() {
+            document.getElementById("box").style.backgroundColor = "orange";
+            document.getElementById("box").innerHTML = "Mouse over";
+        }
+
+        // Function to run when the mouse leaves the box
+        function handleMouseOut() {
+            document.getElementById("box").style.backgroundColor = "dodgerblue";
+            document.getElementById("box").innerHTML = "Hover over me";
+        }
+
+        // Assigning event listeners to the box element
+        document.getElementById("box").addEventListener("mouseover", handleMouseOver);
+        document.getElementById("box").addEventListener("mouseout", handleMouseOut);
+    </script>
+</body>
+</html>
