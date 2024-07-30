@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Image and Indentation Example</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Assuming the CSS is saved in a file named styles.css -->
+    <style>
+        /* Inline CSS for demonstration purposes */
+        .background-and-indent {
+            background-image: url('https://via.placeholder.com/800'); /* Replace with your image URL */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 20px; /* Adds padding to ensure content is not overlaid on the background image */
+            text-indent: 50px; /* Indents the first line of text */
+        }
+
+        .container {
+            margin: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container background-and-indent">
+        <p>This is a paragraph with a background image and indentation. The first line of this paragraph is indented, and the background image is displayed behind the text. Adjust the padding and text-indent values as needed to achieve the desired visual effect.</p>
+    </div>
+</body>
+</html>
