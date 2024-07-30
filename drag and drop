@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .draggable {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .droppable {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            border: 2px dashed #333;
+            border-radius: 8px;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Drag and Drop Example</h1>
+        <div id="draggable1" class="draggable" draggable="true">Drag me</div>
+        <div id="draggable2" class="draggable" draggable="true">Drag me too</div>
+        <div id="droppable" class="droppable">Drop here</div>
+    </div>
+    
+    <script>
+        // Add event listeners for drag and drop
+        const draggables = document.querySelectorAll('.draggable');
+        const droppable = document.getElementById('droppable');
+
+        draggables.forEach(draggable => {
+            draggable.addEventListener('dragstart', dragStart);
+        });
+
+        droppable.addEventListener('dragover', dragOver);
+        droppable.addEventListener('drop', drop);
+
+        function dragStart(e) {
+            e.dataTransfer.setData('text/plain', e.target.id);
+            setTimeout(() => {
+                e.target.style.visibility = 'hidden';
+            }, 0);
+        }
+
+        function dragOver(e) {
+            e.preventDefault();
+        }
+
+        function drop(e) {
+            e.preventDefault();
+            const id = e.dataTransfer.getData('text/plain');
+            const draggable = document.getElementById(id);
+            droppable.appendChild(draggable);
+            draggable.style.visibility = 'visible';
+        }
+    </script>
+</body>
+</html>
