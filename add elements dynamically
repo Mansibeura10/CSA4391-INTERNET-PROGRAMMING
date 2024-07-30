@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Elements Dynamically</title>
+<script>
+function addElement() {
+    var newDiv = document.createElement("div");
+    newDiv.textContent = "New Element";
+    document.body.appendChild(newDiv);
+}
+</script>
+</head>
+<body>
+<button onclick="addElement()">Add Element</button>
+</body>
+</html>
