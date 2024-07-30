@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contents</title>
+</head>
+<body>
+    <h2>Contents</h2>
+    <ul>
+        <li><a href="cars.html#car1" target="carsFrame">Car 1</a></li>
+        <li><a href="cars.html#car2" target="carsFrame">Car 2</a></li>
+        <li><a href="cars.html#car3" target="carsFrame">Car 3</a></li>
+    </ul>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cars</title>
+</head>
+<body>
+    <h2>Cars Information</h2>
+    
+    <div id="car1">
+        <h3>Car 1</h3>
+        <p>Description of Car 1.</p>
+    </div>
+    
+    <div id="car2">
+        <h3>Car 2</h3>
+        <p>Description of Car 2.</p>
+    </div>
+    
+    <div id="car3">
+        <h3>Car 3</h3>
+        <p>Description of Car 3.</p>
+    </div>
+</body>
+</html>
