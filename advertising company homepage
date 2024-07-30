@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advertising Company Homepage</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4;">
+    <header style="background-color: #ff9800; color: white; padding: 1em 0; text-align: center;">
+        <h1>Welcome to XYZ Advertising</h1>
+    </header>
+    <nav style="display: flex; justify-content: center; background-color: #333;">
+        <a href="#home" style="color: white; padding: 14px 20px; text-decoration: none; text-align: center;">Home</a>
+        <a href="#about" style="color: white; padding: 14px 20px; text-decoration: none; text-align: center;">About Us</a>
+        <a href="#services" style="color: white; padding: 14px 20px; text-decoration: none; text-align: center;">Services</a>
+        <a href="#contact" style="color: white; padding: 14px 20px; text-decoration: none; text-align: center;">Contact</a>
+    </nav>
+    <div style="padding: 20px;">
+        <section id="home" style="background-color: #e3f2fd; text-align: center; padding: 50px 20px;">
+            <h1 style="color: #0288d1;">Creating Impactful Advertising Solutions</h1>
+            <p style="color: #555;">Join us to take your brand to the next level.</p>
+        </section>
+        <section id="about" style="background-color: #fff3e0; padding: 20px; margin: 20px 0;">
+            <h2>About Us</h2>
+            <p style="color: #555;">XYZ Advertising has been a leader in the advertising industry for over a decade. Our mission is to create compelling and effective advertising campaigns that drive results for our clients. Our team of experts is dedicated to delivering innovative solutions that captivate and engage audiences.</p>
+        </section>
+        <section id="services" style="background-color: #e8f5e9; padding: 20px; margin: 20px 0;">
+            <h2>Our Services</h2>
+            <ul style="list-style-type: none; padding: 0;">
+                <li style="background-color: #4CAF50; color: white; margin: 10px 0; padding: 10px;">Creative Advertising</li>
+                <li style="background-color: #4CAF50; color: white; margin: 10px 0; padding: 10px;">Digital Marketing</li>
+                <li style="background-color: #4CAF50; color: white; margin: 10px 0; padding: 10px;">Brand Strategy</li>
+                <li style="background-color: #4CAF50; color: white; margin: 10px 0; padding: 10px;">Media Planning</li>
+                <li style="background-color: #4CAF50; color: white; margin: 10px 0; padding: 10px;">Public Relations</li>
+            </ul>
+        </section>
+        <section id="contact" style="background-color: #fce4ec; padding: 20px; margin: 20px 0;">
+            <h2>Contact Us</h2>
+            <p style="color: #555;">Address: 1234 Ad Avenue, Marketing City, Promo State</p>
+            <p style="color: #555;">Phone: (123) 456-7890</p>
+            <p style="color: #555;">Email: info@xyzadvertising.com</p>
+        </section>
+    </div>
+    <footer style="background-color: #333; color: white; text-align: center; padding: 10px 0;">
+        <p>&copy; 2024 XYZ Advertising. All rights reserved.</p>
+    </footer>
+</body>
+</html>
