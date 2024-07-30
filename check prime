@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+<input type="text" id="number" placeholder="Enter an integer">
+<button onclick="checkPrime()">Check</button>
+<p id="result"></p>
+<script>
+function checkPrime() {
+  const num = parseInt(document.getElementById("number").value);
+  const isPrime = num > 1 && Array(Math.floor(Math.sqrt(num)) - 1).fill().map((_, i) => i + 2).every(i => num % i !== 0);
+  document.getElementById("result").textContent = isNaN(num) ? "Invalid input" : (isPrime ? ${num} is a prime number. : ${num} is not a prime number.);
+}
+</script>
+</body>
+</html>
