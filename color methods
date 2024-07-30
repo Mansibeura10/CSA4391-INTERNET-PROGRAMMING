@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Methods</title>
+    <style>
+        .hex { color: #ff5733; } .rgb { color: rgb(60, 179, 113); } .hsl { color: hsl(200, 100%, 50%); }
+    </style>
+</head>
+<body>
+    <p class="hex">Hex Color</p>
+    <p class="rgb">RGB Color</p>
+    <p class="hsl">HSL Color</p>
+</body>
+</html>
