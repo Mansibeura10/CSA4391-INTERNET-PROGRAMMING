@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exception Handling</title>
+</head>
+<body>
+<button onclick="handleException()">Click Me</button>
+<p id="message"></p>
+<script>
+function handleException() { try { let result = x / 0; } catch (error) { document.getElementById('message').innerText = "Error: " + error.message; } }
+</script>
+</body>
+</html>
