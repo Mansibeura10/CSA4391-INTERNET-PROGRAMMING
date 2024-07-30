@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Shadows in a Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Box shadow */
+        }
+        h1 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow */
+        }
+        .box {
+            width: 200px;
+            height: 100px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Box shadow */
+            text-align: center;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px;
+            color: white;
+            background-color: #008CBA;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Box shadow */
+        }
+        .button:hover {
+            background-color: #005f73;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Box shadow on hover */
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3); /* Box shadow */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Understanding Shadows in CSS</h1>
+    </header>
+    <div class="box">
+        <p>This box has a shadow.</p>
+    </div>
+    <div style="text-align: center;">
+        <a href="#" class="button">Button with Shadow</a>
+    </div>
+    <footer>
+        <p>&copy; 2024 Shadow Demonstration. All rights reserved.</p>
+    </footer>
+</body>
+</html>
