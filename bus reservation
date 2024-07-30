@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Reservation Model</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bus Reservation Model</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Book a Ticket</a></li>
+                <li><a href="#">Schedule</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Welcome to Our Bus Reservation System</h2>
+            <p>Book your tickets easily and travel comfortably with us!</p>
+            <button>Book Now</button>
+        </div>
+    </section>
+    <section class="features">
+        <div class="feature">
+            <h3>Easy Booking</h3>
+            <p>Book your tickets online with just a few clicks.</p>
+        </div>
+        <div class="feature">
+            <h3>Comfortable Travel</h3>
+            <p>Experience a comfortable and safe journey with our buses.</p>
+        </div>
+        <div class="feature">
+            <h3>24/7 Support</h3>
+            <p>We are here to assist you anytime, anywhere.</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Bus Reservation Model. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
