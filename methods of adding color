@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Various Methods of Adding Color</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Internal CSS */
+        .internal-background {
+            background-color: #e3f2fd; /* Light blue background */
+        }
+        .internal-text {
+            color: #d32f2f; /* Red text color */
+        }
+        .internal-border {
+            border: 2px solid #ff9800; /* Orange border */
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: #4CAF50; color: white; padding: 1em 0; text-align: center;">
+        <!-- Inline CSS -->
+        <h1>Understanding Various Methods of Adding Color</h1>
+    </header>
+    <nav style="background-color: #333;">
+        <!-- Inline CSS -->
+        <a href="#inline" style="color: white; padding: 14px 20px; text-decoration: none;">Inline</a>
+        <a href="#internal" style="color: white; padding: 14px 20px; text-decoration: none;">Internal</a>
+        <a href="#external" style="color: white; padding: 14px 20px; text-decoration: none;">External</a>
+    </nav>
+    <div class="container">
+        <section id="inline" style="padding: 20px;">
+            <h2 style="color: #0288d1;">Inline CSS</h2>
+            <p style="color: #388E3C; background-color: #E8F5E9; padding: 10px; border: 2px solid #81C784;">
+                This paragraph uses inline CSS to apply text color, background color, and border color.
+            </p>
+        </section>
+        <section id="internal" class="internal-background" style="padding: 20px;">
+            <h2 class="internal-text">Internal CSS</h2>
+            <p class="internal-border" style="padding: 10px;">
+                This paragraph uses internal CSS to apply background color, text color, and border color.
+            </p>
+        </section>
+        <section id="external" class="external-background" style="padding: 20px;">
+            <h2 class="external-text">External CSS</h2>
+            <p class="external-border">
+                This paragraph uses external CSS to apply background color, text color, and border color.
+            </p>
+        </section>
+    </div>
+    <footer style="background-color: #333; color: white; text-align: center; padding: 10px 0;">
+        <!-- Inline CSS -->
+        <p>&copy; 2024 XYZ Educational Institute. All rights reserved.</p>
+    </footer>
+</body>
+</html>
