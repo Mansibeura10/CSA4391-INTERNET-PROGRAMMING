@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Input Validation</title>
+</head>
+<body>
+<form onsubmit="return validate()">
+    <input type="text" id="name" placeholder="Name">
+    <input type="text" id="phone" placeholder="Phone">
+    <input type="password" id="password" placeholder="Password">
+    <input type="text" id="email" placeholder="Email">
+    <input type="submit" value="Submit">
+</form>
+<p id="message"></p>
+<script>
+function validate() {
+    var namePattern = /^[a-zA-Z\s]+$/, phonePattern = /^\d{10}$/, passwordPattern = /^(?=.[A-Za-z])(?=.\d)[A-Za-z\d]{8,}$/, emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!namePattern.test(document.getElementById('name').value) || !phonePattern.test(document.getElementById('phone').value) || !passwordPattern.test(document.getElementById('password').value) || !emailPattern.test(document.getElementById('email').value)) {
+        document.getElementById('message').innerText = "Invalid input"; return false;
+    }
+    document.getElementById('message').innerText = "Valid input"; return true;
+}
+</script>
+</body>
+</html>
