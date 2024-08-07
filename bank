@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Banking System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Online Banking System</h1>
+    </header>
+    <main>
+        <section class="account-info">
+            <h2>Account Information</h2>
+            <div id="accountDetails">
+                <p>Account Holder: John Doe</p>
+                <p>Account Number: 123456789</p>
+                <p>Balance: $<span id="balance">1000.00</span></p>
+            </div>
+        </section>
+
+        <section class="transactions">
+            <h2>Perform Transactions</h2>
+            <form id="transactionForm">
+                <label for="transactionType">Transaction Type:</label>
+                <select id="transactionType">
+                    <option value="deposit">Deposit</option>
+                    <option value="withdrawal">Withdrawal</option>
+                </select>
+
+                <label for="amount">Amount ($):</label>
+                <input type="number" id="amount" step="0.01" min="0" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section class="transaction-history">
+            <h2>Transaction History</h2>
+            <ul id="transactionHistory">
+                <!-- Transaction history items will be added here -->
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Online Banking System</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+2. styles.css
+This CSS file provides styling for the online banking system interface.
+
+css
+Copy code
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f9;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input, select, button {
+    margin-top: 5px;
+    padding: 8px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+#transactionHistory {
+    list-style-type: none;
+    padding: 0;
+}
+
+#transactionHistory li {
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+}
+
+#transactionHistory li:last-child {
+    border-bottom: none;
+}
+3. script.js
+This JavaScript file handles account balance updates, transactions, and transaction history.
+
+javascript
+Copy code
+document.addEventListener('DOMContentLoaded', function () {
+    const balanceElement = document.getElementById('balance');
+    const transactionForm = document.getElementById('transactionForm');
+    const transactionHistory = document.getElementById('transactionHistory');
+
+    let balance = parseFloat(balanceElement.textContent);
+
+    // Function to update the balance display
+    function updateBalance() {
+        balanceElement.textContent = balance.toFixed(2);
+    }
+
+    // Function to add a transaction to the history
+    function addTransactionToHistory(type, amount) {
+        const transactionItem = document.createElement('li');
+        const transactionTypeText = type === 'deposit' ? 'Deposited' : 'Withdrew';
+        transactionItem.textContent = `${transactionTypeText}: $${amount.toFixed(2)}`;
+        transactionHistory.appendChild(transactionItem);
+    }
+
+    // Handle form submission for transactions
+    transactionForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const transactionType = document.getElementById('transactionType').value;
+        const amount = parseFloat(document.getElementById('amount').value);
+
+        if (transactionType === 'deposit') {
+            balance += amount;
+            addTransactionToHistory('deposit', amount);
+        } else if (transactionType === 'withdrawal') {
+            if (amount <= balance) {
+                balance -= amount;
+                addTransactionToHistory('withdrawal', amount);
+            } else {
+                alert('Insufficient funds for this withdrawal.');
+                return;
+            }
+        }
+
+        updateBalance();
+        transactionForm.reset();
+    });
+});
