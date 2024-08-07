@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Restaurant and Hotel Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Online Booking System</h1>
+    </header>
+    <main>
+        <section class="restaurant-menu">
+            <h2>Restaurant Menu</h2>
+            <div class="menu-items">
+                <!-- Example Menu Item -->
+                <div class="menu-item">
+                    <img src="https://via.placeholder.com/150" alt="Dish Image">
+                    <h3>Dish 1</h3>
+                    <p>Price: $15</p>
+                    <button class="add-to-cart" data-name="Dish 1" data-price="15">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <img src="https://via.placeholder.com/150" alt="Dish Image">
+                    <h3>Dish 2</h3>
+                    <p>Price: $20</p>
+                    <button class="add-to-cart" data-name="Dish 2" data-price="20">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <img src="https://via.placeholder.com/150" alt="Dish Image">
+                    <h3>Dish 3</h3>
+                    <p>Price: $12</p>
+                    <button class="add-to-cart" data-name="Dish 3" data-price="12">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="hotel-rooms">
+            <h2>Hotel Rooms</h2>
+            <div class="rooms">
+                <!-- Example Room Item -->
+                <div class="room">
+                    <img src="https://via.placeholder.com/150" alt="Room Image">
+                    <h3>Room 1</h3>
+                    <p>Price per Night: $100</p>
+                    <button class="add-to-cart" data-name="Room 1" data-price="100">Add to Cart</button>
+                </div>
+                <div class="room">
+                    <img src="https://via.placeholder.com/150" alt="Room Image">
+                    <h3>Room 2</h3>
+                    <p>Price per Night: $150</p>
+                    <button class="add-to-cart" data-name="Room 2" data-price="150">Add to Cart</button>
+                </div>
+                <div class="room">
+                    <img src="https://via.placeholder.com/150" alt="Room Image">
+                    <h3>Room 3</h3>
+                    <p>Price per Night: $200</p>
+                    <button class="add-to-cart" data-name="Room 3" data-price="200">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="shopping-cart" id="shoppingCart">
+            <h2>Your Booking Cart</h2>
+            <ul id="cartItems">
+                <!-- Cart items will be added here -->
+            </ul>
+            <p>Total: $<span id="totalPrice">0</span></p>
+            <button id="checkoutButton">Checkout</button>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Online Restaurant and Hotel Booking</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+2. styles.css
+This CSS file provides styling for the restaurant and hotel booking system.
+
+css
+Copy code
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f9;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.restaurant-menu, .hotel-rooms, .shopping-cart {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.menu-items, .rooms {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.menu-item, .room {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 10px;
+    width: calc(33.333% - 20px);
+    text-align: center;
+}
+
+.menu-item img, .room img {
+    border-radius: 4px;
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 8px 12px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.shopping-cart ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.shopping-cart ul li {
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+}
+
+.shopping-cart ul li:last-child {
+    border-bottom: none;
+}
+
+#checkoutButton {
+    background-color: #28a745;
+}
+
+#checkoutButton:hover {
+    background-color: #218838;
+}
+3. script.js
+This JavaScript file handles adding items to the cart, calculating totals, and managing the checkout process.
+
+javascript
+Copy code
+document.addEventListener('DOMContentLoaded', function () {
+    const cartItems = document.getElementById('cartItems');
+    const totalPriceElement = document.getElementById('totalPrice');
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    let totalPrice = 0;
+
+    // Function to update the total price
+    function updateTotalPrice() {
+        totalPriceElement.textContent = totalPrice.toFixed(2);
+    }
+
+    // Function to add a product or room to the cart
+    function addToCart(itemName, itemPrice) {
+        const cartItem = document.createElement('li');
+        cartItem.textContent = `${itemName} - $${itemPrice}`;
+        cartItems.appendChild(cartItem);
+        totalPrice += parseFloat(itemPrice);
+        updateTotalPrice();
+    }
+
+    // Add event listeners to "Add to Cart" buttons
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const itemName = this.getAttribute('data-name');
+            const itemPrice = this.getAttribute('data-price');
+            addToCart(itemName, itemPrice);
+        });
+    });
+
+    // Handle checkout
+    document.getElementById('checkoutButton').addEventListener('click', function () {
+        if (totalPrice > 0) {
+            alert('Thank you for your booking! Your total is $' + totalPrice.toFixed(2));
+            cartItems.innerHTML = '';
+            totalPrice = 0;
+            updateTotalPrice();
+        } else {
+            alert('Your cart is empty. Please add some items or rooms.');
+        }
+    });
+});
