@@ -1,0 +1,165 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Reservation System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Online Railway Reservation System</h1>
+    </header>
+    <main>
+        <section class="reservation-form">
+            <h2>Book Your Ticket</h2>
+            <form id="reservationForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="fromStation">From:</label>
+                    <input type="text" id="fromStation" name="fromStation" required>
+                </div>
+                <div class="form-group">
+                    <label for="toStation">To:</label>
+                    <input type="text" id="toStation" name="toStation" required>
+                </div>
+                <div class="form-group">
+                    <label for="travelDate">Travel Date:</label>
+                    <input type="date" id="travelDate" name="travelDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="class">Class:</label>
+                    <select id="class" name="class" required>
+                        <option value="economy">Economy</option>
+                        <option value="business">Business</option>
+                        <option value="first">First</option>
+                    </select>
+                </div>
+                <button type="submit">Book Now</button>
+            </form>
+        </section>
+        <section class="booking-confirmation" id="bookingConfirmation">
+            <!-- Booking confirmation details will be displayed here -->
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Online Railway Reservation System</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+2. styles.css
+This CSS file will provide basic styling for the webpage.
+
+css
+Copy code
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f9;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reservation-form, .booking-confirmation {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="email"], input[type="date"], select {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 8px;
+    width: 100%;
+}
+
+button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+3. script.js
+This JavaScript file will handle form submissions and display booking confirmations.
+
+javascript
+Copy code
+document.getElementById('reservationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Get form data
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const fromStation = document.getElementById('fromStation').value;
+    const toStation = document.getElementById('toStation').value;
+    const travelDate = document.getElementById('travelDate').value;
+    const travelClass = document.getElementById('class').value;
+
+    // Create booking confirmation message
+    const confirmationMessage = `
+        <h2>Booking Confirmation</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>From:</strong> ${fromStation}</p>
+        <p><strong>To:</strong> ${toStation}</p>
+        <p><strong>Travel Date:</strong> ${travelDate}</p>
+        <p><strong>Class:</strong> ${travelClass.charAt(0).toUpperCase() + travelClass.slice(1)}</p>
+        <p>Your booking has been successfully made. Thank you for choosing our service!</p>
+    `;
+
+    // Display booking confirmation
+    const bookingConfirmation = document.getElementById('bookingConfirmation');
+    bookingConfirmation.innerHTML = confirmationMessage;
+});
