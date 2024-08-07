@@ -1,0 +1,171 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airplane Ticket Booking System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Online Airplane Ticket Booking</h1>
+    </header>
+    <main>
+        <section class="booking-form">
+            <h2>Book Your Flight</h2>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="fromAirport">From:</label>
+                    <input type="text" id="fromAirport" name="fromAirport" required>
+                </div>
+                <div class="form-group">
+                    <label for="toAirport">To:</label>
+                    <input type="text" id="toAirport" name="toAirport" required>
+                </div>
+                <div class="form-group">
+                    <label for="departureDate">Departure Date:</label>
+                    <input type="date" id="departureDate" name="departureDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="returnDate">Return Date:</label>
+                    <input type="date" id="returnDate" name="returnDate">
+                </div>
+                <div class="form-group">
+                    <label for="flightClass">Class:</label>
+                    <select id="flightClass" name="flightClass" required>
+                        <option value="economy">Economy</option>
+                        <option value="business">Business</option>
+                        <option value="first">First</option>
+                    </select>
+                </div>
+                <button type="submit">Book Flight</button>
+            </form>
+        </section>
+        <section class="booking-confirmation" id="bookingConfirmation">
+            <!-- Booking confirmation details will be displayed here -->
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Online Airplane Ticket Booking</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+2. styles.css
+This CSS file will provide styling for the airplane ticket booking webpage.
+
+css
+Copy code
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f9;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.booking-form, .booking-confirmation {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="email"], input[type="date"], select {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 8px;
+    width: 100%;
+}
+
+button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+3. script.js
+This JavaScript file will handle form submission and display the booking confirmation.
+
+javascript
+Copy code
+document.getElementById('bookingForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Get form data
+    const fullName = document.getElementById('fullName').value;
+    const email = document.getElementById('email').value;
+    const fromAirport = document.getElementById('fromAirport').value;
+    const toAirport = document.getElementById('toAirport').value;
+    const departureDate = document.getElementById('departureDate').value;
+    const returnDate = document.getElementById('returnDate').value;
+    const flightClass = document.getElementById('flightClass').value;
+
+    // Create booking confirmation message
+    const confirmationMessage = `
+        <h2>Booking Confirmation</h2>
+        <p><strong>Full Name:</strong> ${fullName}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>From:</strong> ${fromAirport}</p>
+        <p><strong>To:</strong> ${toAirport}</p>
+        <p><strong>Departure Date:</strong> ${departureDate}</p>
+        <p><strong>Return Date:</strong> ${returnDate || 'N/A'}</p>
+        <p><strong>Class:</strong> ${flightClass.charAt(0).toUpperCase() + flightClass.slice(1)}</p>
+        <p>Your flight has been successfully booked. Thank you for choosing our service!</p>
+    `;
+
+    // Display booking confirmation
+    const bookingConfirmation = document.getElementById('bookingConfirmation');
+    bookingConfirmation.innerHTML = confirmationMessage;
+});
